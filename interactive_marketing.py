@@ -138,7 +138,7 @@ INSTALL_BASE = {
 import csv
 from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path("campaign_history.csv").resolve().parent
 
 _campaign_data_loaded = False
 _campaign_data: Dict[Tuple[str, str], List[Tuple[str, str]]] = {}
