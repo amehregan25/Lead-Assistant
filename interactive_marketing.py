@@ -138,6 +138,8 @@ INSTALL_BASE = {
 import csv
 from pathlib import Path
 
+BASE_DIR = Path(__file__).resolve().parent
+
 _campaign_data_loaded = False
 _campaign_data: Dict[Tuple[str, str], List[Tuple[str, str]]] = {}
 
@@ -150,7 +152,7 @@ def _load_campaign_data() -> None:
     global _campaign_data_loaded, _campaign_data
     if _campaign_data_loaded:
         return
-    csv_path = Path("/Users/aujanmehregan/PycharmProjects/PythonProject2/report1765405239456.csv")
+    csv_path = BASE_DIR / "campaign_history.csv"
     if not csv_path.exists():
         # No campaign data available
         _campaign_data_loaded = True
